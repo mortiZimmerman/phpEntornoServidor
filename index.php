@@ -16,7 +16,7 @@
         echo "Ingrese su nombre de usuario:  
         <input type='text' name='nombreUsuario' required><br>
         <label for='Paises'>Seleccione el país deseado:</label>
-        <select name='Paises' required>";
+        <select name='Paises2' required>";
 
         
         //Aquí estan el array de los paises

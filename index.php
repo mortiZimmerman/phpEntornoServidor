@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +26,20 @@
             $pais = $p;
             echo "<option value='paises'>$p</option>";
         }
-       
+        // validacion del nombre en php
+        if (isset($_GET['nombreUsuario']) && isset($_GET['Paises2'])) {
+            $nombreUsuario = $_GET['nombreUsuario'];
+                
+        // comprobamos que el nombre cumple con los requisitos
+        if (!preg_match("/^[A-Z][a-zA-Z]*$/", $nombreUsuario)) {
+                
+            echo "<p style='color:red;'>El nombre debe comenzar con mayúscula y no tener números o caracteres especiales.</p>";
+        } else {
+        // redirigir a la siguiente página si el nombre es válido
+            header("Location: php.php?nombreUsuario=$nombreUsuario&Paises2=" . urlencode($_GET['Paises2']));
+            exit;
+            }
+        }
         ?>
          </select>
          <br>

@@ -35,7 +35,7 @@
                 
             echo "<p style='color:red;'>El nombre debe comenzar con mayúscula y no tener números o caracteres especiales.</p>";
         } else {
-        // redirigir a la siguiente página si el nombre es válido
+        // redirigir a la siguiente página si el nombre es valido
             header("Location: php.php?nombreUsuario=$nombreUsuario&Paises2=" . urlencode($_GET['Paises2']));
             exit;
             }

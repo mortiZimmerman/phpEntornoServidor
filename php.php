@@ -6,28 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form action=""></form>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<form action=""></form>
 <?php 
-// Expresión regular para validar el nombre de usuario
+// expresion regular 
 $expresionRegular = "/^[A-Z][a-zA-Z]*$/";
 
-// Métodos de recogida de datos del formulario anterior
+// metodos de recogida de datos 
 $nombreUsuario = $_GET['nombreUsuario'];
 $nombrePais = $_GET['Paises2'];
 
-// Validación del nombre del usuario
+// validacion del nombre del usuario
     if (preg_match($expresionRegular, $nombreUsuario)) {
         
-        // Array de ciudades por país
+        // array asociativo
         $ciudadesPorPais = [
             "España" => ["Madrid", "Barcelona", "Valencia", "Sevilla", "Bilbao"],
             "Alemania" => ["Berlín", "Múnich", "Hamburgo", "Fráncfort", "Colonia"],
@@ -44,7 +34,7 @@ $nombrePais = $_GET['Paises2'];
             "Andorra" => ["Andorra la Vieja", "Escaldes-Engordany", "Encamp", "Sant Julià", "La Massana"]
         ];
 
-        // Verificar que el país seleccionado tenga ciudades en el array
+        // v rificar que el pais seleccionado tenga ciudades en el array
         if (array_key_exists($nombrePais, $ciudadesPorPais)) {
             echo "<p>Hola, $nombreUsuario. Selecciona una ciudad en $nombrePais:</p>";
             
@@ -54,7 +44,7 @@ $nombrePais = $_GET['Paises2'];
             <label for='ciudad'>Ciudad:</label>
             <select name='ciudad' required>";
             
-            // Mostrar las ciudades como opciones en el formulario
+            // mostrar las ciudades como opciones en el formulario
             foreach ($ciudadesPorPais[$nombrePais] as $ciudad) {
                 echo "<option value='$ciudad'>$ciudad</option>";
             }
@@ -71,9 +61,6 @@ $nombrePais = $_GET['Paises2'];
         echo "<p style='color:red;'>El nombre de usuario no es válido</p>";
     }
     ?>
-
-</body>
-</html>
 
 </body>
 </html>

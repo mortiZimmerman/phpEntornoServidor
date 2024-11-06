@@ -8,7 +8,7 @@
 <body>
 <?php 
 // expresion regular para validar el nombre
-$expresionRegular = "/^[A-Z][a-zA-Z]*$/";
+$expresionRegular = "/^[A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*$/";
 
 // verificar que los parametros de nombre y pais estan definidos
 if (!isset($_GET['nombreUsuario']) || !isset($_GET['Paises2'])) {
